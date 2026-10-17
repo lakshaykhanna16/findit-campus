@@ -1,0 +1,82 @@
+/* main */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #12366d;
+}
+
+/* navbar */
+.navbar {
+    min-height: 70px;
+    padding: 10px 9.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #e8eef5;
+}
+
+/* logo  */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #12366d;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+.logo b,
+.logo small {
+    display: block;
+}
+
+.logo b {
+    font-size: 24px;
+}
+
+.logo small {
+    margin-top: 2px;
+    font-size: 11px;
+    color: #526780;
+}
+
+/* nav link */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav-links a {
+    padding: 10px 0;
+    color: #334761;
+    font-size: 14px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0875ee;
+}
+
+/* active nav link */
+.nav-links a.active {
+    border-bottom: 2px solid #0875ee;
+}
+
+/* get started button */
+.get-started {
+    padding: 12px 20px;
+    background: #0875ee;
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
