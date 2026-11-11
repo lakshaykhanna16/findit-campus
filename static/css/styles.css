@@ -17,7 +17,37 @@ body {
     align-items: center;
     justify-content: space-between;
     background: white;
-    border-bottom: 1px solid #e8eef5;
+     border-bottom: 1px solid #99baec;
+}
+
+/* nav links */
+.nav-links a {
+    padding: 10px 0;
+    color: #334761;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+}
+
+/* hover effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #0875ee;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* active link color */
+.nav-links a.active {
+    color: #0875ee;
 }
 
 /* logo  */
@@ -25,7 +55,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #12366d;
+    color: #0760c5;
 }
 
 .logo-icon {
@@ -43,8 +73,8 @@ body {
 
 .logo small {
     margin-top: 2px;
-    font-size: 11px;
-    color: #526780;
+    font-size: 14px;
+    color: #065fc4;
 }
 
 /* nav link */
@@ -65,13 +95,12 @@ body {
     color: #0875ee;
 }
 
-/* active nav link */
-.nav-links a.active {
-    border-bottom: 2px solid #0875ee;
-}
 
 /* get started button */
 .get-started {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 20px;
     background: #0875ee;
     color: white;
