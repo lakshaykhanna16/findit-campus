@@ -20,6 +20,12 @@ body {
      border-bottom: 1px solid #99baec;
 }
 
+.fa-solid {
+    font-size: 30px;
+    color: #0875ee;
+}
+
+
 /* nav links */
 .nav-links a {
     padding: 10px 0;
