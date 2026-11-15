@@ -11,9 +11,9 @@
     <title>FindIt | Campus Lost & Found</title>
     <link rel="stylesheet" href="../static/css/styles.css" />
   </head>
+
   <body>
     <!-- navbar -->
-
     <nav class="navbar">
       <div class="logo">
         <i class="fa-solid fa-location-dot"></i>
@@ -24,16 +24,80 @@
       </div>
 
       <div class="nav-links">
-        <a href="/" class="active">Home</a>
-        <a href="/browse">Browse Items</a>
-        <a href="/report">Report Item</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="">Browse Items</a>
+        <a href="">Report Item</a>
       </div>
 
-      <a href="/login" class="get-started"> 👤 Get Started </a>
+      <a href="" class="get-started"> 👤 Get Started </a>
     </nav>
 
+    <!-- main -->
     <main>
-      <!-- home -->
+      <!-- hero section -->
+      <section class="home">
+        <div class="home-content">
+          <span class="home-label">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Campus Lost &amp; Found
+          </span>
+
+          <h1>
+            Lost something<br />
+            on campus?<br />
+            Found something? <span>Find it.</span>
+          </h1>
+
+          <p>
+            A simple, user-friendly platform to help students report, search and
+            recover lost and found items on campus.
+          </p>
+
+          <!-- search bar -->
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              placeholder="Search by item name, category or location..."
+            />
+
+            <button type="button">Search</button>
+          </div>
+
+          <!-- popular searches -->
+          <div class="ps">
+            <span class="p-title">
+              <i class="fa-solid fa-fire"></i>
+              Popular searches:
+            </span>
+
+            <a href="">Bagpack</a>
+            <a href="">Phone</a>
+            <a href="">Keys</a>
+            <a href="">Wallet</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- grid section -->
+      <section class="grid">
+        <div class="grid-box">
+          <i class="fa-solid fa-magnifying-glass-location"></i>
+        </div>
+
+        <div class="grid-box">
+          <i class="fa-solid fa-file"></i>
+        </div>
+
+        <div class="grid-box">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div class="grid-box">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+      </section>
     </main>
   </body>
 </html>
