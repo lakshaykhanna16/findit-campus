@@ -270,19 +270,70 @@ body {
 
 /* grid section */
 .grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
   padding: 30px 50px;
 }
 
 .grid-box {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   background-color: #e1efff;
+  padding: 20px;
   border-radius: 10px;
-  flex: 1;
+  height: 90px;
 }
 
-.grid-box i {
-  padding: 30px;
-  font-size: 40px;
+.grid-icon {
+  font-size: 50px;
+  color: #0875ee;
+  margin-bottom: 15px;
+}
+
+.grid-text h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #12366d;
+}
+
+.grid-text p {
+  font-size: 13px;
+  color: #526b89;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* working section */
+
+.ws {
+  background-color: #e1efff;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 300px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.hyphen-label b {
+  font-size: 12px;
+  margin-left: 30px;
+  color: #0570eb;
+}
+
+.ws-head b {
+  margin-left: 30px;
+  font-size: 35px;
+}
+
+.ws-head span {
+  font-size: 35px;
+  font-weight: bold;
+  color: #046ad6;
+}
+
+.ws-head p {
+  margin-left: 30px;
+  color: #7a7d81;
 }
