@@ -1,5 +1,7 @@
-/* main */
+
+/* GLOBAL */
 * {
+<<<<<<< HEAD
   box-sizing: border-box;
 }
 
@@ -7,10 +9,22 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #12366d;
+=======
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* navbar */
+body {
+    font-family: Arial, sans-serif;
+    color: #34434A;
+    background-color: #F2F8FA;
+>>>>>>> page/browse-items
+}
+
+/* NAVBAR */
 .navbar {
+<<<<<<< HEAD
   min-height: 70px;
   padding: 10px 9.5%;
   display: flex;
@@ -26,19 +40,51 @@ body {
 .fa-solid {
   font-size: 35px;
   color: #0875ee;
+=======
+    min-height: 70px;
+    padding: 10px 9.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DCEAF0;
+>>>>>>> page/browse-items
 }
 
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+/* NAVIGATION LINKS */
 /* nav links */
 .nav-links a {
+<<<<<<< HEAD
   padding: 10px;
   color: #334761;
   font-size: 20px;
   text-decoration: none;
   position: relative;
+=======
+    padding: 10px 0;
+    color: #52636B;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+>>>>>>> page/browse-items
 }
 
 /* hover effect */
 .nav-links a::after {
+<<<<<<< HEAD
   content: "";
   position: absolute;
 
@@ -48,6 +94,16 @@ body {
   bottom: 0;
   width: 0;
   transition: width 0.3s;
+=======
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #319BC5;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+>>>>>>> page/browse-items
 }
 
 .nav-links a:hover::after {
@@ -55,6 +111,7 @@ body {
 }
 
 .nav-links a.active {
+<<<<<<< HEAD
   color: #0875ee;
 }
 
@@ -83,6 +140,9 @@ body {
   margin-top: 2px;
   font-size: 14px;
   color: #054997;
+=======
+    color: #319BC5;
+>>>>>>> page/browse-items
 }
 
 /* nav link */
@@ -93,13 +153,20 @@ body {
 }
 
 .nav-links a {
+<<<<<<< HEAD
   padding: 10px 0;
   color: #334761;
   font-size: 17px;
+=======
+    padding: 10px 0;
+    color: #52636B;
+    font-size: 14px;
+>>>>>>> page/browse-items
 }
 
 .nav-links a:hover,
 .nav-links a.active {
+<<<<<<< HEAD
   color: #0875ee;
 }
 
@@ -336,4 +403,70 @@ body {
 .ws-head p {
   margin-left: 30px;
   color: #7a7d81;
+=======
+    color: #319BC5;
+}
+
+/* GET STARTED BUTTON */
+.get-started {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #319BC5;
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.get-started:hover {
+    background-color: #2585AA;
+}
+
+/* FOOTER */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #244653;
+    color: #FFFFFF;
+    padding: 40px 4%;
+    gap: 30px;
+}
+
+.footer h4 {
+    margin-bottom: 15px;
+    color: #A9DCEB;
+}
+
+.footer p {
+    color: #E0EDF0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 10px;
+    color: #E0EDF0;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #A9DCEB;
+}
+
+.footer hr {
+    margin: 18px 0;
+    border: none;
+    border-top: 1px solid #66818A;
+}
+
+.footer .copyright {
+    font-size: 12px;
+    color: #C5D8DE;
+>>>>>>> page/browse-items
 }
