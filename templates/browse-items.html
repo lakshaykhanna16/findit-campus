@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse-Items</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="/static/css/browse-items.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <title>FindIt | Browse Items</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/browse-items.css" />
+  </head>
 <body>
-    <header>
-        <!-- navbar -->
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/templates/index.html">
-                    <img src="/static/images/logo.png" alt="logo">
-                </a>
-            </div> 
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+          <b>FindIt</b>
+          <small>Campus Lost &amp; Found</small>
+        </span>
+      </div>
 
-            <div class="nav-links">
-                <a href="/templates/index.html">Home</a>
-                <a href="/templates/browse-items.html" class="active">Browse Items</a>
-                <a href="/">Report Item</a>
-            </div>
-            <a href="/login" class="get-started">👤 Get Started</a>
+      <div class="nav-links">
+        <a href="/templates/index.html">Home</a>
+        <a href="/templates/browse-items.html" class="active">Browse Items</a>
+        <a href="/templates/report-items.html">Report Item</a>
+      </div>
+
+      <a href="" class="get-started"> 👤 Get Started </a>
     </nav>
-    </header>
 
+    <!-- main -->
     <main>
+        <!-- hero -->
         <section id="hero">
-                <img id="hero-image" src="/static/images/hero-image.png" alt="hero-image">
+            <img id="hero-image" src="/static/images/hero-image.png" alt="hero-image">
+
             <div id="hero-data">
                 <p id="breadcrumb">Home / Browse items</p>
                 <h1>Browse Lost and Found Items</h1>
                 <p id="description">Find what you have lost or help someone find their belongings</p>
-
             </div>
         </section>
 
-
+        <!-- search -->
         <section id="search">
             <form id="search-form" method="get">
 
@@ -52,6 +60,7 @@
                     <button class="search-button" type="submit">Search</button>
                 </div>
 
+                <!-- filters -->
                 <div class="filter-row">
 
                     <div id="status">
@@ -62,8 +71,8 @@
                     </div>
 
                     <div class="filter-group">
-                        <label for="category-">Category:</label>
-                        <select name="category" id="ategory-">
+                        <label for="category">Category:</label>
+                        <select name="category" id="category">
                             <option value="all" selected>All Categories</option>
                             <option value="wallets">Wallets</option>
                             <option value="pens">Pens</option>
@@ -84,8 +93,7 @@
             </form>
         </section>
 
-
-
+        <!-- items -->
         <section id="grid-container">
 
             <div class="item">
@@ -201,15 +209,14 @@
 
     </main>
 
+    <!-- footer -->
     <footer class="footer">
         <div class="footer-brand">
             <div class="logo">
-                <span class="logo-icon">
-                    <img src="/static/images/logo.png" alt="logo">
-                </span>
+                <i class="fa-solid fa-location-dot"></i>
                 <span>
                     <b>FindIt</b>
-                    <small>Campus Lost & Found</small>
+                    <small>Campus Lost &amp; Found</small>
                 </span>
             </div>
             <p>
@@ -220,10 +227,9 @@
         <div class="footer-links">
             <h4>Quick Links</h4>
             <a href="/templates/index.html">Home</a>
-            <a href="/templates/browse-items.html">Browse-items</a>
-            <a href="/templates/report-items">Report Item</a>
+            <a href="/templates/browse-items.html">Browse Items</a>
+            <a href="/templates/report-items.html">Report Item</a>
             <a href="/templates/how-it-works">How it works</a>
-
         </div>
 
         <div class="footer-support">
