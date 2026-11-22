@@ -1,20 +1,16 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Browse-Items</title>
-<link rel="stylesheet" href="../static/css/styles.css" />
-<link rel="stylesheet" href="../static/css/browse-items.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- NAVBAR -->
+{% extends "base.html" %}
+
+{%block title%}FindIt | Browse Items{%endblock%}
+
+{%block extra_css%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/browse-items.css')}}"/>
+{%endblock%}
+
+{%block content%}
+    <!-- navbar -->
     <nav class="navbar">
-      <div class="logo">
+        <div class="logo">
         <i class="fa-solid fa-location-dot"></i>
         <span>
           <b>FindIt</b>
@@ -23,270 +19,128 @@
       </div>
 
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="browse-items.html" class="active">Browse Items</a>
-        <a href="report-items.html">Report Item</a>
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('browse')}}" class="active">Browse Items</a>
+        <a href="{{url_for('report')}}">Report Item</a>
       </div>
 
       <a href="" class="get-started"> 👤 Get Started </a>
     </nav>
 
-    <!-- MAIN -->
+    <!-- main -->
     <main>
-      <!-- HERO SECTION -->
-      <section id="hero">
-        <img
-          id="hero-image"
-          src="../static/images/hero-image.png"
-          alt="Campus background"
-        />
+        <!-- hero -->
+        <section class="hero">
+            <img
+            src="{{ url_for('static', filename='images/campus_bg.png') }}"
+            alt="DAVIET campus"
+            class="campus-background"
+        >
 
-        <div id="hero-data">
-          <p id="breadcrumb">Home / Browse Items</p>
-          <h1>Browse Lost and Found Items</h1>
-          <p id="description">
-            Find what you've lost or help someone find their belongings.
-          </p>
-        </div>
-      </section>
+            <div class="hero-text">
+                <p id="breadcrumb">Home / Browse Items</p>
+                <h1>Browse Lost and <span>Found Items</span></h1>
+                <p>Find what you have lost or help someone find their belongings.</p>
+            </div>
+        </section>
 
-      <!-- SEARCH AND FILTERS -->
-      <section id="search">
-        <form id="search-form" method="get">
-          <div class="search-row">
-            <input
-              class="search-input"
-              type="search"
-              name="q"
-              placeholder="Search by item name, keyword or description..."
-              aria-label="Search items"
-            />
-            <button class="search-button" type="submit">Search</button>
-          </div>
+        <!-- search -->
+        <section id="search">
+            <form id="search-form" method="get">
 
-          <div class="filter-row">
-            <div id="status">
-              <h5>Status:</h5>
-              <button type="button">All items</button>
-              <button type="button">Lost</button>
-              <button type="button">Found</button>
+                <div class="search-row">
+                    <input
+                        class="search-input"
+                        type="search"
+                        name="q"
+                        placeholder="Search by item name, keyword or description..."
+                        aria-label="Search items"
+                    >
+                    <button class="search-button" type="submit">Search</button>
+                </div>
+
+                <!-- filters -->
+                <div class="filter-row">
+
+                    <div id="status">
+                        <h5>Status:</h5>
+                        <button type="button">All items</button>
+                        <button type="button">Lost</button>
+                        <button type="button">Found</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="category">Category:</label>
+                        <select name="category" id="category">
+                            <option value="all" selected>All Categories</option>
+                            <option value="wallets">Wallets</option>
+                            <option value="pens">Pens</option>
+                            <option value="books">Books</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort-select">Sort By:</label>
+                        <select name="sort" id="sort-select">
+                            <option value="new">Newest First</option>
+                            <option value="old">Oldest</option>
+                            <option value="alphabetical">Alphabetically</option>
+                        </select>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+
+        <!-- items -->
+        <section id="grid-container">
+
+            <div class="item">
+                <img src="{{ url_for("static", filename="items/item1.jpeg") }}" alt="Item 1">
+                <div class="item-data">
+                    <h3>Wallet</h3>
+                    <p class="item-category-name"></p>
+                    <p class="location">Location: Library</p>
+                    <p class="date">15th November 2026</p>
+                    <p class="item-info">Brown colored Leather Wallet</p>
+                </div>
             </div>
 
-            <div class="filter-group">
-              <label for="category">Category:</label>
-              <select name="category" id="category">
-                <option value="all" selected>All Categories</option>
-                <option value="wallets">Wallets</option>
-                <option value="pens">Pens</option>
-                <option value="books">Books</option>
-              </select>
+            <div class="item">
+                <img src="{{ url_for("static", filename="items/item1.jpeg") }}" alt="Item 1">
+                <div class="item-data">
+                    <h3>Wallet</h3>
+                    <p class="item-category-name"></p>
+                    <p class="location">Location: Library</p>
+                    <p class="date">15th November 2026</p>
+                    <p class="item-info">Brown colored Leather Wallet</p>
+                </div>
             </div>
 
-            <div class="filter-group">
-              <label for="sort-select">Sort By:</label>
-              <select name="sort" id="sort-select">
-                <option value="new">Newest First</option>
-                <option value="old">Oldest</option>
-                <option value="alphabetical">Alphabetically</option>
-              </select>
-            </div>
-          </div>
-        </form>
-      </section>
-
-      <!-- ITEMS -->
-      <section id="grid-container">
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Wallet" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
+            <div class="item">
+                <img src="{{ url_for("static", filename="items/item1.jpeg") }}" alt="Item 1">
+                <div class="item-data">
+                    <h3>Wallet</h3>
+                    <p class="item-category-name"></p>
+                    <p class="location">Location: Library</p>
+                    <p class="date">15th November 2026</p>
+                    <p class="item-info">Brown colored Leather Wallet</p>
+                </div>
             </div>
 
-            <div class="filter-group">
-              <label for="category-">Category:</label>
-              <select name="category" id="ategory-">
-                <option value="all" selected>All Categories</option>
-                <option value="wallets">Wallets</option>
-                <option value="pens">Pens</option>
-                <option value="books">Books</option>
-              </select>
+            <div class="item">
+                <img src="{{ url_for("static", filename="items/item1.jpeg") }}" alt="Item 1">
+                <div class="item-data">
+                    <h3>Wallet</h3>
+                    <p class="item-category-name"></p>
+                    <p class="location">Location: Library</p>
+                    <p class="date">15th November 2026</p>
+                    <p class="item-info">Brown colored Leather Wallet</p>
+                </div>
             </div>
 
-            <div class="filter-group">
-              <label for="sort-select">Sort By:</label>
-              <select name="sort" id="sort-select">
-                <option value="new">Newest First</option>
-                <option value="old">Oldest</option>
-                <option value="alphabetical">Alphabetically</option>
-              </select>
-            </div>
-          </div>
-        </form>
-      </section>
+        </section>
 
-      <section id="grid-container">
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="../static/items/item1.jpeg" alt="Item 1" />
-          <div class="item-data">
-            <h3>Wallet</h3>
-            <p class="item-category-name"></p>
-            <p class="location">Location: Library</p>
-            <p class="date">15th November 2026</p>
-            <p class="item-info">Brown colored Leather Wallet</p>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-brand">
-        <div class="logo-footer">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <b>FindIt</b>
-            <small>Campus Lost &amp; Found</small>
-          </span>
-        </div>
-
-        <p>
-          Helping campus belongings find their way home.
-        </p>
-        </div>
-        <p>Helping campus belongings find their way home.</p>
-      </div>
-
-      <div class="footer-links">
-        <h4 style="color: white">Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="browse-items.html">Browse Items</a>
-        <a href="report-items.html">Report Item</a>
-        <a href="how-it-works.html">How it works</a>
-      </div>
-
-      <div class="footer-support">
-        <h4 style="color: white">Help & Support</h4>
-
-        <a href="/">FAQs</a>
-        <a href="/">Contact Us</a>
-      </div>
-
-      <div class="footer-credit">
-        <h4 style="color: white">Created by Students, for Students</h4>
-
-        <p>
-          This website is a project developed by a team of college students as
-          part of a learning initiative.
-        </p>
-
-        <hr />
-
-        <p class="copyright">© 2026 FindIt. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
-</html>
+{%endblock%}

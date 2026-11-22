@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+{% extends "base.html" %}
 
-    <title>FindIt | Report Item</title>
-    <link rel="stylesheet" href="/static/css/styles.css" />
-    <link rel="stylesheet" href="/static/css/report-items.css" />
-  </head>
+{%block title%}FindIt | Report Items{%endblock%}
 
-  <body>
+{%block extra_css%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/report-items.css')}}"/>
+{%endblock%}
+
+{%block content%}
     <!-- navbar -->
     <nav class="navbar">
       <div class="logo">
@@ -25,9 +19,9 @@
       </div>
 
       <div class="nav-links">
-        <a href="/templates/index.html">Home</a>
-        <a href="/templates/browse-items.html">Browse Items</a>
-        <a href="/templates/report-items.html" class="active">Report Item</a>
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('browse')}}">Browse Items</a>
+        <a href="{{url_for('report')}}" class="active">Report Items</a>
       </div>
 
       <a href="" class="get-started"> 👤 Get Started </a>
@@ -37,20 +31,21 @@
     <main>
       <!-- hero -->
       <section class="hero">
-        <img src="/static/images/hero-image.png" alt="Campus" />
+        <img
+            src="{{ url_for('static', filename='images/campus_bg.png') }}"
+            alt="DAVIET campus"
+            class="campus-background"
+        >
 
         <div class="hero-text">
-          <span class="home-label">
-            <i class="fa-solid fa-graduation-cap"></i>
-            Campus Lost &amp; Found
-          </span>
-
-          <h1>Report a Lost or <span>Found Item</span></h1>
-
-          <p>
-            Help us reunite belongings with their owners. Fill out the form
-            below to report a lost or found item on campus.
-          </p>
+          <div id="hero-data">
+            <p id="breadcrumb">Home / Report Items</p>
+            <h1>Report a Lost or <span>Found Item</span></h1>
+            <p>
+              Help us reunite belongings with their owners. Fill out the form
+              below to report a lost or found item on campus.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -148,51 +143,4 @@
       </section>
     </main>
 
-    <!-- footer -->
-    <footer class="footer">
-        <div class="footer-brand">
-            <div class="logo">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>
-                    <b>FindIt</b>
-                    <small>Campus Lost &amp; Found</small>
-                </span>
-            </div>
-            <p>
-                Helping campus belongings find their way home.
-            </p>
-        </div>
-
-        <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="/templates/index.html">Home</a>
-            <a href="/templates/browse-items.html">Browse Items</a>
-            <a href="/templates/report-items.html">Report Item</a>
-            <a href="/templates/how-it-works">How it works</a>
-        </div>
-
-        <div class="footer-support">
-            <h4>Help & Support</h4>
-
-            <a href="/">FAQs</a>
-            <a href="/">Contact Us</a>
-        </div>
-
-        <div class="footer-credit">
-            <h4>Created by Students, for Students</h4>
-
-            <p>
-                This website is a project developed by a team
-                of college students as part of a learning initiative.
-            </p>
-
-            <hr>
-
-            <p class="copyright">
-                © 2026 FindIt. All rights reserved.
-            </p>
-        </div>
-
-    </footer>
-  </body>
-</html>
+{%endblock%}

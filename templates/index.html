@@ -1,18 +1,9 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+{% extends "base.html" %}
 
-    <title>FindIt | Campus Lost & Found</title>
-    <link rel="stylesheet" href="../static/css/styles.css" />
-  </head>
+{%block title%}FindIt | Campus Lost & Found{%endblock%}
 
-  <body>
+{%block content%}
+
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
@@ -24,9 +15,9 @@
       </div>
 
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="browse-items.html">Browse Items</a>
-        <a href="report-items.html">Report Item</a>
+        <a href="{{url_for('home')}}" class="active">Home</a>
+        <a href="{{url_for('browse')}}">Browse Items</a>
+        <a href="{{url_for('report')}}">Report Item</a>
       </div>
 
       <a href="" class="get-started"> 👤 Get Started </a>
@@ -36,6 +27,12 @@
     <main>
       <!-- HERO SECTION -->
       <section class="home">
+        <img
+            src="{{ url_for('static', filename='images/campus_bg.png') }}"
+            alt="DAVIET campus"
+            class="campus-background"
+        >
+
         <div class="home-content">
           <!-- home label -->
           <span class="home-label">
@@ -59,7 +56,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
 
             <input
-              type="text"
+            type="text"
               placeholder="Search by item name, category or location..."
             />
 
@@ -164,14 +161,14 @@
                 reported. You can search by name, category, location, or date.
               </p>
               <span class="ws-box-label">
-                <a href="../templates/browse-items.html">
+                <a href="{{ url_for('browse') }}">
                   Go to Browse Items —></a
                 >
               </span>
             </div>
 
             <div class="ws-image">
-              <img src="../static/images/ws-box-1.png" />
+              <img src="{{ url_for('static', filename='images/ws-box-1.png') }}" />
             </div>
           </div>
 
@@ -191,12 +188,12 @@
                 class="ws-box-label"
                 style="background-color: rgb(59, 7, 204)"
               >
-                <a href=""> Report Now —></a>
+                <a href="{{ url_for('report') }}"> Report Now —></a>
               </span>
             </div>
 
             <div class="ws-image">
-              <img src="../static/images/ws-box-2.png" />
+              <img src="{{ url_for('static', filename='images/ws-box-2.png') }}" />
             </div>
           </div>
 
@@ -216,12 +213,12 @@
                 class="ws-box-label"
                 style="background-color: rgb(6, 126, 6)"
               >
-                <a href=""> View Items —></a>
+                <a href="{{ url_for('browse') }}"> View Items —></a>
               </span>
             </div>
 
             <div class="ws-image">
-              <img src="../static/images/ws-box-3.png" />
+              <img src="{{ url_for('static', filename='images/ws-box-3.png') }}" />
             </div>
           </div>
         </div>
@@ -234,45 +231,5 @@
         </div>
       </section>
     </main>
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-brand">
-        <div class="logo-footer">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>
-            <b>FindIt</b>
-            <small>Campus Lost &amp; Found</small>
-          </span>
-        </div>
 
-        <p>Helping campus belongings find their way home.</p>
-      </div>
-
-      <div class="footer-links">
-        <h4 style="color: white">Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="browse-items.html">Browse Items</a>
-        <a href="report-items.html">Report Item</a>
-        <a href="how-it-works.html">How it works</a>
-      </div>
-
-      <div class="footer-support">
-        <h4 style="color: white">Help &amp; Support</h4>
-        <a href="#">FAQs</a>
-        <a href="#">Contact Us</a>
-      </div>
-
-      <div class="footer-credit">
-        <h4>Created by Students, for Students</h4>
-        <p>
-          This website is a project developed by a team of college students as
-          part of a learning initiative.
-        </p>
-
-        <hr />
-
-        <p class="copyright">© 2026 FindIt. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
-</html>
+{%endblock%}
