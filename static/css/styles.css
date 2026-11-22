@@ -149,12 +149,34 @@ body {
   padding: 30px;
   display: flex;
   align-items: center;
-  background-image:
-    linear-gradient(to right, rgba(200, 200, 200, 0.2), transparent),
-    url("../images/campus_bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* campus image used as an <img> behind the hero content (all pages) */
+.campus-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* light overlay on top of the image, below the text */
+.home::before,
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(200, 200, 200, 0.2), transparent);
+  z-index: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
 }
 
 .home h1 {

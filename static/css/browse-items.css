@@ -1,42 +1,30 @@
-/* HERO SECTION */
-#hero {
-    display: flex;
+/* HERO (same as report-items.css) */
+.hero {
     position: relative;
-    min-height: 180px;
+    min-height: 350px;
+    padding: 30px 5%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-#hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
+.hero-text {
+    position: relative;
+    z-index: 2;
+    width: 500px;
 }
 
-#hero-data {
-    position: absolute;
-    max-width: 500px;
-    top: 12%;
-    left: 4.5%;
-}
-
-#hero-data h1 {
+.hero-text h1 {
     font-size: 46px;
-    font-weight: 700;
-    line-height: 1.12;
-    color: #267F9F;
-    margin: 0 0 14px 0;
 }
 
-#breadcrumb {
-    font-size: 16px;
-    color: #56899B;
-    margin-bottom: 18px;
+.hero-text h1 span {
+    color: #0875ee;
 }
 
-#description {
-    font-size: 19px;
-    line-height: 1.5;
-    color: #526E78;
-    margin: 0;
+.hero-text p {
+    font-size: 17px;
+    color: #526b89;
 }
 
 /* SEARCH CONTAINER */
@@ -44,7 +32,7 @@
     background-color: #FFFFFF;
     padding: 35px;
     margin: 25px 4%;
-    border: 1px solid #DCEAF0;
+    border: 1px solid #dcebf5;
     border-radius: 10px;
 }
 
@@ -58,13 +46,13 @@
     flex: 1;
     padding: 12px;
     font-size: 15px;
-    border: 1px solid #C9DDE5;
+    border: 1px solid #c9dde5;
     border-radius: 6px;
-    outline-color: #45A9D0;
+    outline-color: #0875ee;
 }
 
 .search-button {
-    background-color: #319BC5;
+    background-color: #0875ee;
     color: white;
     padding: 12px 22px;
     border: none;
@@ -88,22 +76,22 @@
 
 #status h5 {
     font-size: 14px;
-    color: #52636B;
+    color: #526b89;
 }
 
 #status button {
     padding: 9px 15px;
-    background-color: #EAF4F6;
-    color: #52636B;
-    border: 1px solid #D3E5E9;
+    background-color: #e8f1ff;
+    color: #526b89;
+    border: 1px solid #dcebf5;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #status button:first-of-type {
-    background-color: #319BC5;
+    background-color: #0875ee;
     color: white;
-    border-color: #319BC5;
+    border-color: #0875ee;
 }
 
 .filter-group {
@@ -114,14 +102,14 @@
 
 .filter-group label {
     font-size: 14px;
-    color: #52636B;
+    color: #526b89;
 }
 
 .filter-group select {
     padding: 9px 12px;
     background-color: #FFFFFF;
-    color: #34434A;
-    border: 1px solid #C9DDE5;
+    color: #12366d;
+    border: 1px solid #c9dde5;
     border-radius: 5px;
 }
 
@@ -132,13 +120,13 @@
     gap: 20px;
     margin: 40px;
     padding: 20px;
-    background-color: #F2F8FA;
+    background-color: #f4f8fd;
 }
 
 /* INDIVIDUAL ITEM CARD */
 .item {
     background-color: #FFFFFF;
-    border: 1px solid #DCEAF0;
+    border: 1px solid #dcebf5;
     border-radius: 12px;
     padding: 0;
     text-align: left;
@@ -160,13 +148,13 @@
 
 .item h3 {
     font-size: 18px;
-    color: #267F9F;
+    color: #12366d;
     margin-bottom: 8px;
 }
 
 .item p {
     font-size: 14px;
-    color: #52636B;
+    color: #526b89;
     margin-bottom: 9px;
 }
 
@@ -176,7 +164,7 @@
 }
 
 .item .item-info {
-    color: #52636B;
+    color: #526b89;
     line-height: 1.5;
 }
 
