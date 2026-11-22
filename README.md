@@ -1,27 +1,25 @@
-# FindIt — Campus Lost & Found
+# FindIT — Campus Lost & Found
 
-FindIt is a campus lost-and-found web application designed to help students report lost items and find items that have been found on campus.
+FindIT is a campus lost-and-found web application designed to help students report lost items and find items that have been found on campus.
 
 ## Planned Features
 
 - Report lost or found items
 - Browse submitted reports
-- Search by item name
-- Filter reports by status
+- Search for items by name
+- Filter reports by status (Lost / Found)
 
 ## Planned Technology
 
-- Python and Flask
-- HTML
-- CSS
-- JavaScript
+- **Backend:** Python, Flask
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** SQLite (planned)
 
 ## Project Status
 
-Currently in the initial setup phase. Features will be developed incrementally as the team learns and builds.
+Currently in the initial setup phase. The application is being developed incrementally as the team builds and integrates its features.
 
 ## Team
 
-- Project Lead: Lakshay Khanna
-- Team Member: Manisha
-- Team Member: Jia
+- **Project Lead:** Lakshay Khanna
+- **Team Member:** Manisha
