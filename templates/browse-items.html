@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Browse-Items</title>
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <link rel="stylesheet" href="../static/css/browse-items.css" />
+<title>Browse-Items</title>
+<link rel="stylesheet" href="../static/css/styles.css" />
+<link rel="stylesheet" href="../static/css/browse-items.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -24,8 +24,8 @@
 
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="../templates/browse-items.html" class="active">Browse Items</a>
-        <a href="">Report Item</a>
+        <a href="browse-items.html" class="active">Browse Items</a>
+        <a href="report-items.html">Report Item</a>
       </div>
 
       <a href="" class="get-started"> 👤 Get Started </a>
@@ -35,7 +35,12 @@
     <main>
       <!-- HERO SECTION -->
       <section id="hero">
-        <!-- heading -->
+        <img
+          id="hero-image"
+          src="../static/images/hero-image.png"
+          alt="Campus background"
+        />
+
         <div id="hero-data">
           <p id="breadcrumb">Home / Browse Items</p>
           <h1>Browse Lost and Found Items</h1>
@@ -45,6 +50,7 @@
         </div>
       </section>
 
+      <!-- SEARCH AND FILTERS -->
       <section id="search">
         <form id="search-form" method="get">
           <div class="search-row">
@@ -64,6 +70,41 @@
               <button type="button">All items</button>
               <button type="button">Lost</button>
               <button type="button">Found</button>
+            </div>
+
+            <div class="filter-group">
+              <label for="category">Category:</label>
+              <select name="category" id="category">
+                <option value="all" selected>All Categories</option>
+                <option value="wallets">Wallets</option>
+                <option value="pens">Pens</option>
+                <option value="books">Books</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="sort-select">Sort By:</label>
+              <select name="sort" id="sort-select">
+                <option value="new">Newest First</option>
+                <option value="old">Oldest</option>
+                <option value="alphabetical">Alphabetically</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ITEMS -->
+      <section id="grid-container">
+        <div class="item">
+          <img src="../static/items/item1.jpeg" alt="Wallet" />
+          <div class="item-data">
+            <h3>Wallet</h3>
+            <p class="item-category-name"></p>
+            <p class="location">Location: Library</p>
+            <p class="date">15th November 2026</p>
+            <p class="item-info">Brown colored Leather Wallet</p>
+          </div>
             </div>
 
             <div class="filter-group">
@@ -211,15 +252,20 @@
             <small>Campus Lost &amp; Found</small>
           </span>
         </div>
+
+        <p>
+          Helping campus belongings find their way home.
+        </p>
+        </div>
         <p>Helping campus belongings find their way home.</p>
       </div>
 
       <div class="footer-links">
         <h4 style="color: white">Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="../templates/browse-items.html">Browse-items</a>
-        <a href="../templates/report-items">Report Item</a>
-        <a href="../templates/how-it-works">How it works</a>
+        <a href="index.html">Home</a>
+        <a href="browse-items.html">Browse Items</a>
+        <a href="report-items.html">Report Item</a>
+        <a href="how-it-works.html">How it works</a>
       </div>
 
       <div class="footer-support">

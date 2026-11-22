@@ -398,6 +398,7 @@ body {
   text-decoration: none;
   color: white;
 }
+
 .ws-image img {
   width: 130px;
   height: 120px;
@@ -415,15 +416,21 @@ body {
   display: flex;
 }
 
-/* footer */
+/* Footer */
 .footer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 2fr 1fr 1fr 2fr;
   background-color: #1a3742;
   color: #ffffff;
   padding: 40px 4%;
   gap: 30px;
   align-items: start;
+}
+
+.footer .logo,
+.footer .logo small,
+.footer .logo i {
+  color: white;
 }
 
 .logo-footer {
