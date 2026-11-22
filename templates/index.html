@@ -1,85 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
     <title>FindIt | Campus Lost & Found</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-    <header>
-        <!-- navbar -->
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/templates/index.html">
-                    <img src="/static/images/logo.png" alt="logo">
-                </a>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+          <b>FindIt</b>
+          <small>Campus Lost &amp; Found</small>
+        </span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="">Browse Items</a>
+        <a href="">Report Item</a>
+      </div>
+
+      <a href="" class="get-started"> 👤 Get Started </a>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO SECTION -->
+      <section class="home">
+        <div class="home-content">
+          <!-- home label -->
+          <span class="home-label">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Campus Lost &amp; Found
+          </span>
+          <!-- heading -->
+          <h1>
+            Lost something<br />
+            on campus?<br />
+            Found something? <span>Find it.</span>
+          </h1>
+
+          <p>
+            A simple, user-friendly platform to help students report, search and
+            recover lost and found items on campus.
+          </p>
+
+          <!-- search bar -->
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              placeholder="Search by item name, category or location..."
+            />
+
+            <button type="button">Search</button>
+          </div>
+
+          <!-- popular searches -->
+          <div class="ps">
+            <span class="p-title">
+              <i class="fa-solid fa-fire"></i>
+              Popular searches:
+            </span>
+
+            <a href="">Bagpack</a>
+            <a href="">Phone</a>
+            <a href="">Keys</a>
+            <a href="">Wallet</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRID SECTION -->
+      <section class="grid">
+        <!-- first grid -->
+        <div class="grid-box">
+          <div class="grid-icon">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </div>
+
+          <div class="grid-text">
+            <h3>Search</h3>
+            <p>Find lost or found items by name, category or status.</p>
+          </div>
+        </div>
+        <!-- second grid -->
+        <div class="grid-box">
+          <div class="grid-icon">
+            <i class="fa-solid fa-file" style="color: rgb(59, 7, 204)"></i>
+          </div>
+
+          <div class="grid-text">
+            <h3>Report</h3>
+            <p>Post a lost or found item in just a step few steps.</p>
+          </div>
+        </div>
+        <!-- third grid -->
+        <div class="grid-box">
+          <div class="grid-icon">
+            <i class="fa-solid fa-users" style="color: rgb(6, 126, 6)"></i>
+          </div>
+
+          <div class="grid-text">
+            <h3>Connect</h3>
+            <p>Help fellow students recover their belongings.</p>
+          </div>
+        </div>
+        <!-- fourth grid -->
+        <div class="grid-box">
+          <div class="grid-icon">
+            <i
+              class="fa-solid fa-shield-halved"
+              style="color: rgb(1, 43, 121)"
+            ></i>
+          </div>
+
+          <div class="grid-text">
+            <h3>Safe &amp; Simple</h3>
+            <p>A trusted campus platform for everyone.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKING SECTION -->
+      <section class="ws">
+        <!-- ws label -->
+        <div class="hyphen-label">
+          <br />
+          <b> —— &nbsp HOW IT WORKS</b>
+        </div>
+        <!-- ws heading -->
+        <div class="ws-head">
+          <b> Get your lost items back in</b>
+          <span>&nbsp3 simple steps</span>
+          <p>
+            Whether you lost something or found something, FindIt makes it easy
+            to help <br />and get help — all in one place.
+          </p>
+        </div>
+
+        <!-- ws boxes -->
+        <div class="ws-boxes">
+          <!-- first ws box -->
+          <div class="ws-box">
+            <div class="ws-info">
+              <div class="ws-title">
+                <span>01</span>
+                <h3>Search first</h3>
+              </div>
+
+              <p>
+                Use the search bar or filters to check if your item is already
+                reported. You can search by name, category, location, or date.
+              </p>
+              <span class="ws-box-label">
+                <a href=""> Go to Browse Items —></a>
+              </span>
             </div>
 
-            <div class="nav-links">
-                <a href="/templates/index.html" class="active">Home</a>
-                <a href="/templates/browse-items.html">Browse Items</a>
-                <a href="/">Report Item</a>
+            <div class="ws-image">
+              <img src="../static/images/ws-box-1.png" />
             </div>
-            <a href="/login" class="get-started">
-        👤 Get Started </a>
-    </nav>
-    </header>
-    
-    <main>
-        <!-- home -->
+          </div>
+
+          <!-- second ws box -->
+          <div class="ws-box">
+            <div class="ws-info">
+              <div class="ws-title">
+                <span style="color: rgb(59, 7, 204)"> 02</span>
+                <h3>Report an item</h3>
+              </div>
+
+              <p>
+                Lost or found something? Fill out a quick form with all the
+                details - items name, location, date and description.
+              </p>
+              <span
+                class="ws-box-label"
+                style="background-color: rgb(59, 7, 204)"
+              >
+                <a href=""> Report Now —></a>
+              </span>
+            </div>
+
+            <div class="ws-image">
+              <img src="../static/images/ws-box-2.png" />
+            </div>
+          </div>
+
+          <!-- third ws box -->
+          <div class="ws-box">
+            <div class="ws-info">
+              <div class="ws-title">
+                <span style="color: rgb(6, 126, 6)"> 03 </span>
+                <h3>Reunite & Help</h3>
+              </div>
+
+              <p>
+                Once reported, your item will be visible to other students.
+                You'll be notified if someone claims or matches your item.
+              </p>
+              <span
+                class="ws-box-label"
+                style="background-color: rgb(6, 126, 6)"
+              >
+                <a href=""> View Items —></a>
+              </span>
+            </div>
+
+            <div class="ws-image">
+              <img src="../static/images/ws-box-3.png" />
+            </div>
+          </div>
+        </div>
+        <!-- ws end section -->
+        <div class="tag">
+          <span>
+            📍 &nbsp;Real people &nbsp;&nbsp;x&nbsp;&nbsp; Real items
+            &nbsp;&nbsp;x&nbsp;&nbsp; A stronger campus community
+          </span>
+        </div>
+      </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-brand">
-            <div class="logo">
-                <span class="logo-icon">
-                    <img src="/static/images/logo.png" alt="logo">
-                </span>
-                <span>
-                    <b>FindIt</b>
-                    <small>Campus Lost & Found</small>
-                </span>
-            </div>
-            <p>
-                Helping campus belongings find their way home.
-            </p>
+      <div class="footer-brand">
+        <div class="logo-footer">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>
+            <b>FindIt</b>
+            <small>Campus Lost &amp; Found</small>
+          </span>
         </div>
+        <p>Helping campus belongings find their way home.</p>
+      </div>
 
-        <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="/">Home</a>
-            <a href="/templates/browse-items.html">Browse-items</a>
-            <a href="/templates/report-items">Report Item</a>
-            <a href="/templates/how-it-works">How it works</a>
+      <div class="footer-links">
+        <h4 style="color: white">Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/templates/browse-items.html">Browse-items</a>
+        <a href="/templates/report-items">Report Item</a>
+        <a href="/templates/how-it-works">How it works</a>
+      </div>
 
-        </div>
+      <div class="footer-support">
+        <h4 style="color: white">Help & Support</h4>
 
-        <div class="footer-support">
-            <h4>Help & Support</h4>
+        <a href="/">FAQs</a>
+        <a href="/">Contact Us</a>
+      </div>
 
-            <a href="/">FAQs</a>
-            <a href="/">Contact Us</a>
-        </div>
+      <div class="footer-credit">
+        <h4 style="color: white">Created by Students, for Students</h4>
 
-        <div class="footer-credit">
-            <h4>Created by Students, for Students</h4>
+        <p>
+          This website is a project developed by a team of college students as
+          part of a learning initiative.
+        </p>
 
-            <p>
-                This website is a project developed by a team
-                of college students as part of a learning initiative.
-            </p>
+        <hr />
 
-            <hr>
-
-            <p class="copyright">
-                © 2026 FindIt. All rights reserved.
-            </p>
-        </div>
-
+        <p class="copyright">© 2026 FindIt. All rights reserved.</p>
+      </div>
     </footer>
-    
-
-</body>
+  </body>
 </html>
-
