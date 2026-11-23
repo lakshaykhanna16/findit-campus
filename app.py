@@ -1,6 +1,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
+import os
 
 from extensions import db
 from models import Item
@@ -12,7 +13,12 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "findit-development-key"
 
 # Database configuration
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///items.db"
+# Vercel can only write to /tmp, so the database goes there when deployed.
+# Locally it stays in the instance/ folder.
+if os.environ.get("VERCEL"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/items.db"
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///items.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialise database
