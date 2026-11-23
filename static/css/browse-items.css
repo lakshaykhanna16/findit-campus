@@ -168,3 +168,50 @@
     line-height: 1.5;
 }
 
+/* Edit and Delete Buttons */
+
+
+/* Edit and Delete button container */
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.item-actions form {
+    margin: 0;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #2878d0;
+}
+
+.edit-btn:hover {
+    background-color: #185da8;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #b02a37;
+}

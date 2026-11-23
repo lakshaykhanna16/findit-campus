@@ -1,0 +1,96 @@
+
+/* Edit Item Page */
+
+.form-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.form-container p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-container label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #2878d0;
+    box-shadow: 0 0 0 3px rgba(40, 120, 208, 0.12);
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    background: #2878d0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-container button:hover {
+    background: #185da8;
+}
+
+.form-container a {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #2878d0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .form-container {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+}

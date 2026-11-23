@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{%block title%}FindIt | Edit Item{%endblock%}
+
+{%block extra_css%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/edit-item.css')}}"/>
+{%endblock%}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Edit Item Report</h1>
+    <p>Update the information about your lost or found item.</p>
+
+    <form method="POST">
+
+        <!-- Item Name -->
+        <label for="item_name">Item Name</label>
+        <input
+            type="text"
+            id="item_name"
+            name="item_name"
+            value="{{ item.item_name }}"
+            required
+        >
+
+        <!-- Category -->
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+
+            <option value="">Select Category</option>
+
+            <option value="Wallets"
+                {% if item.category == "Wallets" %}selected{% else %}{% endif %}>
+                Wallets
+            </option>
+
+            <option value="Pens"
+                {% if item.category == "Pens" %}selected{% else %}{% endif %}>
+                Pens
+            </option>
+
+            <option value="Books"
+                {% if item.category == "Books" %}selected{% else %}{% endif %}>
+                Books
+            </option>
+
+            <option value="Other"
+                {% if item.category == "Other" %}selected{% else %}{% endif %}>
+                Other
+            </option>
+
+        </select>
+
+        <!-- Status -->
+        <label for="status">Item Status</label>
+        <select id="status" name="status" required>
+
+            <option value="Lost"
+                {% if item.status == "Lost" %}selected{% else %}{% endif %}>
+                Lost
+            </option>
+
+            <option value="Found"
+                {% if item.status == "Found" %}selected{% else %}{% endif %}>
+                Found
+            </option>
+
+        </select>
+
+        <!-- Location -->
+        <label for="location">Location</label>
+        <input
+            type="text"
+            id="location"
+            name="location"
+            value="{{ item.location or '' }}"
+        >
+
+        <!-- Date -->
+        <label for="date">Date</label>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            value="{{ item.date.strftime('%Y-%m-%d') if item.date else '' }}"
+        >
+
+        <!-- Description -->
+        <label for="description">Description</label>
+        <textarea
+            id="description"
+            name="description"
+            rows="4"
+        >{{ item.description or '' }}</textarea>
+
+        <!-- Buttons -->
+        <button type="submit">Save Changes</button>
+
+        <a href="{{ url_for('browse') }}">Cancel</a>
+
+    </form>
+
+</div>
+
+{% endblock %}
