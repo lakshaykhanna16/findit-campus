@@ -12,7 +12,11 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-
+    {% if get_flashed_messages() %}
+        <p class="flash-message">
+            {{ get_flashed_messages()[0] }}
+        </p>
+    {% endif %}
     {% block content %}{% endblock %}
 
     <!-- footer (shared by every page) -->
