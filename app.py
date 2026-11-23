@@ -68,5 +68,38 @@ def report():
     return render_template("report-items.html")
 
 
+
+@app.route("/edit-item/<int:item_id>", methods=["GET", "POST"])
+def edit_item(item_id):
+
+    # Find the item using its unique ID
+    item = Item.query.get_or_404(item_id)
+
+    if request.method == "POST":
+
+        # Update the existing item's information
+        item.item_name = request.form["item_name"]
+        item.category = request.form["category"]
+        item.status = request.form["status"]
+        item.location = request.form["location"]
+
+        # Convert submitted date string into Python date
+        item.date = datetime.strptime(
+            request.form["date"], "%Y-%m-%d"
+        ).date()
+
+        item.description = request.form["description"]
+
+        # Save changes to database
+        db.session.commit()
+
+        flash("Item updated successfully!", "success")
+
+        return redirect(url_for("browse"))
+
+    # Display the edit form with existing information
+    return render_template("edit-item.html", item=item)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

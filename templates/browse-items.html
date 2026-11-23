@@ -105,6 +105,7 @@
                     <p class="location">Location: {{ item.location }}</p>
                     <p class="date">Date: {{ item.date }}</p>
                     <p class="item-info">{{ item.description }}</p>
+                    <a href="{{ url_for('edit_item', item_id=item.item_id) }}">Edit</a>
                 </div>
             </div>
 
