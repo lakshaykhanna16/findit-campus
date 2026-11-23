@@ -1,5 +1,10 @@
-
 {% extends "base.html" %}
+
+{%block title%}FindIt | Edit Item{%endblock%}
+
+{%block extra_css%}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/edit-item.css')}}"/>
+{%endblock%}
 
 {% block content %}
 

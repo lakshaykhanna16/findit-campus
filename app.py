@@ -101,5 +101,25 @@ def edit_item(item_id):
     return render_template("edit-item.html", item=item)
 
 
+@app.route("/delete-item/<int:item_id>", methods=["POST"])
+def delete_item(item_id):
+
+    # Find the item using its ID
+    item = Item.query.get_or_404(item_id)
+
+    # Delete the item from the database
+    db.session.delete(item)
+
+    # Save the deletion
+    db.session.commit()
+
+    # Show success message
+    flash("Item deleted successfully!", "success")
+
+    # Return to Browse Items
+    return redirect(url_for("browse"))
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
