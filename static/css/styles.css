@@ -526,3 +526,86 @@ body {
     text-align: center;
     font-weight: 500;
 }
+
+/* ===== PHONE (screens 768px and smaller) ===== */
+@media (max-width: 768px) {
+  /* navbar: logo + button on top row, links wrap to a second row */
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 5%;
+    gap: 8px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* hero: remove the big left margins and let the search bar shrink */
+  .home {
+    padding: 20px 15px;
+  }
+
+  .home h1 {
+    font-size: 28px;
+  }
+
+  .home h1,
+  .home p,
+  .home-label,
+  .search-bar,
+  .ps {
+    margin-left: 0;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .ps {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* feature boxes: one per row */
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+  }
+
+  /* how it works section */
+  .ws {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .ws-head b,
+  .ws-head span {
+    font-size: 24px;
+  }
+
+  .ws-boxes {
+    grid-template-columns: 1fr;
+    margin: 15px;
+  }
+
+  .ws-box {
+    height: auto;
+  }
+
+  .ws-image img {
+    width: 90px;
+    height: auto;
+  }
+
+  /* footer: stack the columns */
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

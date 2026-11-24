@@ -168,8 +168,6 @@
     line-height: 1.5;
 }
 
-/* Edit and Delete Buttons */
-
 
 /* Edit and Delete button container */
 
@@ -214,4 +212,33 @@
 
 .delete-btn:hover {
     background-color: #b02a37;
+}
+
+/* ===== PHONE (screens 768px and smaller) ===== */
+@media (max-width: 768px) {
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    #search {
+        padding: 20px;
+        margin: 20px 15px;
+    }
+
+    /* stack the status buttons and dropdowns */
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    #grid-container {
+        grid-template-columns: 1fr;
+        margin: 15px;
+        padding: 10px;
+    }
 }
