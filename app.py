@@ -1,7 +1,8 @@
 
+import os
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
-import os
 
 from extensions import db
 from models import Item
@@ -10,15 +11,21 @@ from models import Item
 app = Flask(__name__)
 
 # Secret key for flash messages and sessions
-app.config["SECRET_KEY"] = "findit-development-key"
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
 # Database configuration
-# Vercel can only write to /tmp, so the database goes there when deployed.
-# Locally it stays in the instance/ folder.
-if os.environ.get("VERCEL"):
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/items.db"
-else:
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///items.db"
+database_url = os.environ["DATABASE_URL"]
+
+if database_url.startswith("postgres://"):
+    database_url = database_url.replace(
+        "postgres://", "postgresql+psycopg://", 1
+    )
+elif database_url.startswith("postgresql://"):
+    database_url = database_url.replace(
+        "postgresql://", "postgresql+psycopg://", 1
+    )
+
+app.config["SQLALCHEMY_DATABASE_URI"] = database_url
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialise database
@@ -63,7 +70,7 @@ def report():
         # Save item to database
         db.session.add(new_item)
         db.session.commit()
-        
+
         # Show success message
         flash("Your item has been reported successfully!", "success")
 
@@ -72,7 +79,6 @@ def report():
 
     # Display report form (GET request)
     return render_template("report-items.html")
-
 
 
 @app.route("/edit-item/<int:item_id>", methods=["GET", "POST"])
@@ -124,7 +130,6 @@ def delete_item(item_id):
 
     # Return to Browse Items
     return redirect(url_for("browse"))
-
 
 
 if __name__ == "__main__":

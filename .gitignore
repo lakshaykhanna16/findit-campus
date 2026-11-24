@@ -1,7 +1,19 @@
+# Environment variables and secrets
+.env
+.env.*
+.env.save
+!.env.example
+
+# Python virtual environment
 .venv/
+
+# Python cache
 __pycache__/
 *.py[cod]
 
+# Uploaded files
 static/uploads/*
 !static/uploads/.gitkeep
+
+# Local databases
 instance/*.db

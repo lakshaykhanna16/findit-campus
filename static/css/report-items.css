@@ -153,4 +153,12 @@
   .content {
     grid-template-columns: 1fr;
   }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
 }
