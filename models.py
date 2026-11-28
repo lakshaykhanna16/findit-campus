@@ -10,3 +10,5 @@ class Item(db.Model):
     location = db.Column(db.String(150))
     date = db.Column(db.Date)
     description = db.Column(db.Text)
+
+    image_filename = db.Column(db.String(255))

@@ -1,14 +1,20 @@
-
 import os
+from werkzeug.utils import secure_filename
 
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
 
 from extensions import db
 from models import Item
 
+load_dotenv()
 
 app = Flask(__name__)
+
+app.config["UPLOAD_FOLDER"] = os.path.join(
+    app.root_path, "static", "uploads"
+)
 
 # Secret key for flash messages and sessions
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
@@ -52,32 +58,50 @@ def report():
 
     if request.method == "POST":
 
-        # Convert form date into Python date format
-        item_date = datetime.strptime(
-            request.form["date"], "%Y-%m-%d"
+        item_name = request.form.get("item_name")
+        category = request.form.get("category")
+        status = request.form.get("status")
+        location = request.form.get("location")
+        date = datetime.strptime(
+            request.form.get("date"), "%Y-%m-%d"
         ).date()
+        description = request.form.get("description")
 
-        # Create a new item
+        # Create the item first
         new_item = Item(
-            item_name=request.form["item_name"],
-            category=request.form["category"],
-            status=request.form["status"],
-            location=request.form["location"],
-            date=item_date,
-            description=request.form["description"]
+            item_name=item_name,
+            category=category,
+            status=status,
+            location=location,
+            date=date,
+            description=description
         )
 
-        # Save item to database
         db.session.add(new_item)
         db.session.commit()
 
-        # Show success message
-        flash("Your item has been reported successfully!", "success")
+        # Get the uploaded image
+        image = request.files.get("item_image")
 
-        # Redirect back to report page
-        return redirect(url_for("report"))
+        if image and image.filename != "":
+            filename = secure_filename(image.filename)
 
-    # Display report form (GET request)
+            # Give the image a unique filename
+            filename = str(new_item.item_id) + "_" + filename
+
+            # Save the image
+            image.save(
+                os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            )
+
+            # Save the filename in the database
+            new_item.image_filename = filename
+            db.session.commit()
+
+        flash("Item reported successfully!")
+        return redirect(url_for("browse"))
+
+    # GET request: show the empty report form
     return render_template("report-items.html")
 
 
