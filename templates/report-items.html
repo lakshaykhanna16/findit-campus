@@ -51,7 +51,7 @@
       <!-- content -->
       <section class="content">
         <!-- form -->
-        <form class="report-form" method="post">
+        <form class="report-form" method="POST" enctype="multipart/form-data">
           <h2>Item Details</h2>
           <p>Please provide as much information as possible.</p>
 
@@ -107,15 +107,31 @@
           ></textarea>
 
           <!-- photo -->
-          <label for="photo">Add Photo (Optional)</label>
-          <input
-            type="file"
-            id="photo"
-            name="photo"
-            accept="image/png, image/jpeg"
-          />
+          <div class="form-group">
+            <label for="item-image">Upload Item Image</label>
 
-          <button class="submit-button" type="submit">Submit Report</button>
+            <input
+                type="file"
+                id="item-image"
+                name="item_image"
+                accept="image/*"
+            >
+
+                <p id="image-message">No image selected</p>
+
+                <img
+                    id="image-preview"
+                    src=""
+                    alt="Image preview"
+                    style="display: none; width: 200px; margin-top: 10px;"
+                >
+
+                <button type="button" id="remove-image" style="display: none;">
+                    Remove image
+                </button>
+            </div>
+            <!-- Submit button -->
+            <button class="submit-button" type="submit">Submit Report</button>
         </form>
 
         <!-- sidebar -->
